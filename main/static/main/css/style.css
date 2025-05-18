@@ -1,0 +1,42 @@
+/* main/static/main/css/styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('static/main/images/background.jpg');  /* Path to the background image */
+    background-size: cover;  /* Cover the entire page */
+    background-position: center;  /* Center the image */
+    background-repeat: no-repeat;  /* Prevent repeating */
+    background-attachment: fixed;  /* Fix the background while scrolling */
+    color: white;  /* Text color for better contrast */
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.7);  /* Semi-transparent background for header */
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.7);  /* Semi-transparent background for nav */
+    padding: 10px;
+}
+
+main {
+    background-color: rgba(255, 255, 255, 0.8);  /* Semi-transparent background for main content */
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    color: #333;  /* Text color for main content */
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.7);  /* Semi-transparent background for footer */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

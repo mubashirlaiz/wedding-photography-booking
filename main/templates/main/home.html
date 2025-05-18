@@ -1,0 +1,101 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <!-- Hero Section -->
+    <div class="row align-items-center my-5">
+        <div class="col-md-6 align-items-center mb-3">
+            <h1 class="display-4">Welcome to Our Wedding Photography Service</h1>
+            <p class="lead">We specialize in capturing your special moments with creativity and passion. Let us make your wedding day unforgettable!</p>
+            <a href="{% url 'book' %}" class="btn btn-primary btn-lg">Book Now</a>
+        </div>
+        <!-- <div class="col-md-6">
+            <img src="{% static 'main/images/home1.jpg' %}"alt="Wedding Photo" class="img-fluid rounded">
+        </div> -->
+    </div>
+
+    <!-- Services Section -->
+    <div class="row my-5">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{% static 'main/images/homefullday.jpg' %}" class="card-img-top" alt="Service 1">
+                <div class="card-body">
+                    <h5 class="card-title">Full-Day Coverage</h5>
+                    <p class="card-text">Capture every moment from preparation to the reception.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{% static 'main/images/homeengagement.jpg' %}" class="card-img-top" alt="Service 2">
+                <div class="card-body">
+                    <h5 class="card-title">Engagement Shoots</h5>
+                    <p class="card-text">Beautiful pre-wedding photos to celebrate your love story.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{% static 'main/images/homealbum.jpg' %}" class="card-img-top" alt="Service 3">
+                <div class="card-body">
+                    <h5 class="card-title">Photo Albums</h5>
+                    <p class="card-text">Custom-designed albums to preserve your memories.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+  <div class="row my-5">
+    <div class="col-md-6">
+        <h2>Contact Us</h2>
+        <p>Have questions or want to book a session? Get in touch with us!</p>
+        <a href="{% url 'contact' %}" class="btn btn-primary">Contact Us</a>
+    </div>
+    <div class="col-md-6">
+        <h2>Our Location</h2>
+        <p>Visit us at our studio:</p>
+        <address>
+            123 Wedding Street<br>
+            City, State, ZIP Code<br>
+            Phone: (123) 456-7890<br>
+            Email: info@weddingphotography.com
+        </address>
+    </div>
+</div>
+</div>
+
+    <!-- Testimonials Section -->
+    <div class="row my-5">
+        <div class="col">
+            <h2 class="text-center mb-4">What Our Clients Say</h2>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <blockquote class="blockquote text-center">
+                            <p>"Amazing service! They captured every moment perfectly."</p>
+                            <footer class="blockquote-footer">Jane Doe</footer>
+                        </blockquote>
+                    </div>
+                    <div class="carousel-item">
+                        <blockquote class="blockquote text-center">
+                            <p>"Highly professional and creative team. Highly recommended!"</p>
+                            <footer class="blockquote-footer">John Smith</footer>
+                        </blockquote>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

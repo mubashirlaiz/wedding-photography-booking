@@ -1,0 +1,45 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center mb-4">Book Your Wedding Photographer</h1>
+    <p class="lead text-center">Fill out the form below to book your wedding photographer.</p>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="date" class="form-label">Wedding Date</label>
+                            <input type="date" class="form-control" id="date" name="date" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="service" class="form-label">Select Service</label>
+                            <select class="form-select" id="service" name="service" required>
+                                <option value="" disabled selected>Choose a service</option>
+                                <option value="full_day">Full-Day Coverage</option>
+                                <option value="engagement">Engagement Shoot</option>
+                                <option value="album">Photo Album</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Special Requests</label>
+                            <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

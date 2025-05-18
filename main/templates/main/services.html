@@ -1,0 +1,83 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        fetch('/api/services/')
+            .then(response => response.json())
+            .then(data => {
+                const servicesContainer = document.getElementById('services-container');
+                data.forEach(service => {
+                    const card = `
+                        <div class="col">
+                            <div class="card h-100 shadow">
+                                <div class="card-body">
+                                    <h5 class="card-title">${service.name}</h5>
+                                    <p class="card-text">${service.description}</p>
+                                    <p class="card-text"><strong>Price:</strong> $${service.price}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    servicesContainer.innerHTML += card;
+                });
+            })
+            .catch(error => console.error('Error fetching services:', error));
+    });
+</script>
+<!-- <div class="row row-cols-1 row-cols-md-3 g-4" id="services-container">
+    Services will be dynamically inserted here -->
+</div>
+<div class="container my-5">
+    <h1 class="text-center mb-4">Our Services</h1>
+    <p class="lead text-center">We offer a variety of services to make your wedding day perfect.</p>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Service 1 -->
+        <div class="col">
+            <div class="card h-100 shadow">
+                <img src="{% static 'main/images/homefullday.jpg' %}" class="card-img-top" alt="Full-Day Coverage">
+                <div class="card-body">
+                    <h5 class="card-title">Full-Day Coverage</h5>
+                    <p class="card-text">Capture every moment from preparation to the reception.</p>
+                    <p class="card-text"><strong>Price:</strong> $1000</p>
+                </div>
+                <div class="card-footer">
+                    <a href="{% url 'book' %}" class="btn btn-primary w-100">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="col">
+            <div class="card h-100 shadow">
+                <img src="{% static 'main/images/homeengagement.jpg' %}" class="card-img-top" alt="Engagement Shoots">
+                <div class="card-body">
+                    <h5 class="card-title">Engagement Shoots</h5>
+                    <p class="card-text">Beautiful pre-wedding photos to celebrate your love story.</p>
+                    <p class="card-text"><strong>Price:</strong> $500</p>
+                </div>
+                <div class="card-footer">
+                    <a href="{% url 'book' %}" class="btn btn-primary w-100">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="col">
+            <div class="card h-100 shadow">
+                <img src="{% static 'main/images/homealbum.jpg' %}" class="card-img-top" alt="Photo Albums">
+                <div class="card-body">
+                    <h5 class="card-title">Photo Albums</h5>
+                    <p class="card-text">Custom-designed albums to preserve your memories.</p>
+                    <p class="card-text"><strong>Price:</strong> $300</p>
+                </div>
+                <div class="card-footer">
+                    <a href="{% url 'book' %}" class="btn btn-primary w-100">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

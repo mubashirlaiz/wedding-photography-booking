@@ -1,0 +1,54 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center mb-4">Photo Gallery</h1>
+    <p class="lead text-center">Check out some of our previous work.</p>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Photo 1 -->
+        <div class="col">
+            <div class="card h-100 shadow">
+                <img src="{% static 'main/images/gallery1.jpg' %}" class="card-img-top" alt="Gallery Image 1">
+                <div class="card-body">
+                    <h5 class="card-title">Wedding Ceremony</h5>
+                    <p class="card-text">A beautiful outdoor wedding ceremony.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Photo 2 -->
+        <div class="col">
+            <div class="card h-100 shadow">
+                <img src="{% static 'main/images/gallery2.jpg' %}" class="card-img-top" alt="Gallery Image 2">
+                <div class="card-body">
+                    <h5 class="card-title">Reception</h5>
+                    <p class="card-text">A lively wedding reception with dancing.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Photo 3 -->
+        <div class="col">
+            <div class="card h-100 shadow">
+                <img src="{% static 'main/images/gallery3.jpg' %}" class="card-img-top" alt="Gallery Image 3">
+                <div class="card-body">
+                    <h5 class="card-title">Engagement Shoot</h5>
+                    <p class="card-text">A romantic engagement shoot in the park.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Photo 4 -->
+        <div class="col">
+            <div class="card h-100 shadow">
+                <img src="{% static 'main/images/gallery4.jpg' %}" class="card-img-top" alt="Gallery Image 4">
+                <div class="card-body">
+                    <h5 class="card-title">Bridal Portraits</h5>
+                    <p class="card-text">Elegant bridal portraits in a studio setting.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
